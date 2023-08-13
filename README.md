@@ -104,10 +104,12 @@ Please take a look at the [wiki](https://github.com/mcguirepr89/BirdNET-Pi/wiki)
 
 ## Updating 
 ***Untested on x86_64!***
+
 Use the web interface and go to "Tools" > "System Controls" > "Update." If you encounter any issues with that, or suspect that the update did not work for some reason, please save its output and post it in an issue where we can help.
 
 ## Uninstallation
 ***Untested on x86_64!***
+
 ```
 /usr/local/bin/uninstall.sh && cd ~ && rm -drf BirdNET-Pi
 ```
