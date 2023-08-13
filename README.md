@@ -74,7 +74,7 @@ Currently listening in these countries . . . that I know of . . .
 * Localization supported
 
 ## Requirements
-* A device with running an x86_64 OS.
+* A device running Debian in x86_64.
 * Some kind of audio input (RTSP stream, microphone)
 
 ## Installation
