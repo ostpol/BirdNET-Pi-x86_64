@@ -74,27 +74,19 @@ Currently listening in these countries . . . that I know of . . .
 * Localization supported
 
 ## Requirements
-* A Raspberry Pi 4B, Raspberry Pi 400, Raspberry Pi 3B+, or Raspberry Pi 0W2 (The 3B+ and 0W2 must run on RaspiOS-ARM64-**Lite**)
-* An SD Card with the **_64-bit version of RaspiOS_** installed (please use Bullseye) -- Lite is recommended, but the installation works on RaspiOS-ARM64-Full as well. Downloads available within the [Raspberry Pi Imager](https://www.raspberrypi.com/software/).
-* A USB Microphone or Sound Card
+* A device with running an x86_64 OS.
+* Some kind of audio input (RTSP stream, microphone)
 
 ## Installation
-[A comprehensive installation guide is available here](https://github.com/mcguirepr89/BirdNET-Pi/wiki/Installation-Guide).
-
-Please note that installing BirdNET-Pi on top of other servers is not supported. If this is something that you require, please open a discussion for your idea and inquire about how to contribute to development.
-
-[Raspberry Pi 3B[+] and 0W2 installation guide available here](https://github.com/mcguirepr89/BirdNET-Pi/wiki/RPi0W2-Installation-Guide)
-
 The system can be installed with:
 ```
-curl -s https://raw.githubusercontent.com/mcguirepr89/BirdNET-Pi/main/newinstaller.sh | bash
+git clone https://github.com/ostpol/BirdNET-Pi-x86_64.git && ./BirdNET-Pi-x86_64/newinstaller.sh
 ```
-The installer takes care of any and all necessary updates, so you can run that as the very first command upon the first boot, if you'd like.
 
 The installation creates a log in `$HOME/installation-$(date "+%F").txt`.
 ## Access
 The BirdNET-Pi can be accessed from any web browser on the same network:
-- http://birdnetpi.local OR your Pi's IP address
+- http://birdnetpi.local OR your devices IP address
 - Default Basic Authentication Username: birdnet
 - Password is empty by default. Set this in "Tools" > "Settings" > "Advanced Settings"
 
@@ -111,10 +103,11 @@ Please take a look at the [wiki](https://github.com/mcguirepr89/BirdNET-Pi/wiki)
 
 
 ## Updating 
-
+***Untested on x86_64!***
 Use the web interface and go to "Tools" > "System Controls" > "Update." If you encounter any issues with that, or suspect that the update did not work for some reason, please save its output and post it in an issue where we can help.
 
 ## Uninstallation
+***Untested on x86_64!***
 ```
 /usr/local/bin/uninstall.sh && cd ~ && rm -drf BirdNET-Pi
 ```
