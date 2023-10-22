@@ -12,8 +12,7 @@ This fork, based on [mcguirepr89/BirdNET-Pi](https://github.com/mcguirepr89/Bird
 ## Changes
 ### newinstaller.sh
 
-** Changed architecture check **
-
+**Changed architecture check**
 ```
 if [ "$(uname -m)" != "aarch64" ];then
 ```
@@ -22,14 +21,14 @@ to
 if [ "$(uname -m)" != "x86_64" ];then
 ```
 
-** Removed **
+**Removed**
 ```
 branch=main
 git clone -b $branch --depth=1 https://github.com/mcguirepr89/BirdNET-Pi.git ${HOME}/BirdNET-Pi &&
 ```
 ### requirements.txt
 
-** Changed **
+**Changed**
 ```
 tflite_runtime-2.6.0-cp39-none-linux_aarch64.whl
 ```
@@ -39,7 +38,7 @@ tflite_runtime
 ```
 ### scripts/install_birdnet.sh
 
-** Changed architecture check **
+**Changed architecture check**
 
 ```
 if [ "$(uname -m)" != "aarch64" ];then
@@ -50,7 +49,7 @@ if [ "$(uname -m)" != "x86_64" ];then
 ```
 ### scripts/install_services.sh
 
-** Changed **
+**Changed**
 ```
 ExecStart=/usr/local/bin/gotty --address localhost -p 8080 -P log --title-format "BirdNET-Pi Log" birdnet_log.sh
 ```
@@ -59,7 +58,7 @@ to
 ExecStart=/usr/local/bin/gotty --address localhost -p 8080 --path log --title-format "BirdNET-Pi Log" birdnet_log.sh
 ```
 
-** Changed **
+**Changed**
 ```
 ExecStart=/usr/local/bin/gotty --address localhost -w -p 8888 -P terminal --title-format "BirdNET-Pi Terminal" login
 ```
