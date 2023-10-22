@@ -2,7 +2,7 @@
 
 This fork, based on [mcguirepr89/BirdNET-Pi](https://github.com/mcguirepr89/BirdNET-Pi), is designed for x86_64 (virtual) machine compatibility of BirdNET-Pi. Visit the original repository for more details, I'll only describe the changes here.
 
-I run BirdNET-Pi within a KVM virtual machine hosted on an Dell T20 with [OMV](https://www.openmediavault.org/).
+I run BirdNET-Pi within a KVM virtual machine hosted on a Dell T20 with [OMV](https://www.openmediavault.org/).
 
 > [!WARNING]
 > Certain actions, such as updating or uninstallation, have not been tested. Proceed at your own risk, or, even better, contribute your experiences with these actions.
