@@ -466,7 +466,7 @@ def handle_client(conn, addr):
     ###############################################################################
     ###############################################################################
 
-        soundscape_uploaded = False
+        soundscape_uploaded = True
 
         # Write detections to Database
         myReturn = ''
@@ -561,7 +561,7 @@ def handle_client(conn, addr):
 
                         if birdweather_id != "99999":
                             try:
-
+                                # We don't upload any soundscapes, since soundscape_uploaded is initialized as True
                                 if soundscape_uploaded is False:
                                     # POST soundscape to server
                                     soundscape_url = 'https://app.birdweather.com/api/v1/stations/' + \
@@ -590,9 +590,9 @@ def handle_client(conn, addr):
                                 post_timestamp = "\"timestamp\": \"" + current_iso8601 + "\","
                                 post_lat = "\"lat\": " + str(args.lat) + ","
                                 post_lon = "\"lon\": " + str(args.lon) + ","
-                                post_soundscape_id = "\"soundscapeId\": " + str(soundscape_id) + ","
-                                post_soundscape_start_time = "\"soundscapeStartTime\": " + start_time + ","
-                                post_soundscape_end_time = "\"soundscapeEndTime\": " + end_time + ","
+                                # post_soundscape_id = "\"soundscapeId\": " + str(soundscape_id) + ","
+                                # post_soundscape_start_time = "\"soundscapeStartTime\": " + start_time + ","
+                                # post_soundscape_end_time = "\"soundscapeEndTime\": " + end_time + ","
                                 post_commonName = "\"commonName\": \"" + entry[0].split('_')[1].split("/")[0] + "\","
                                 post_scientificName = "\"scientificName\": \"" + entry[0].split('_')[0] + "\","
 
@@ -604,8 +604,9 @@ def handle_client(conn, addr):
                                 post_confidence = "\"confidence\": " + str(entry[1])
                                 post_end = " }"
 
-                                post_json = post_begin + post_timestamp + post_lat + post_lon + post_soundscape_id + post_soundscape_start_time + \
-                                    post_soundscape_end_time + post_commonName + post_scientificName + post_algorithm + post_confidence + post_end
+                                # post_json = post_begin + post_timestamp + post_lat + post_lon + post_soundscape_id + post_soundscape_start_time + \
+                                    # post_soundscape_end_time + post_commonName + post_scientificName + post_algorithm + post_confidence + post_end
+                                post_json = post_begin + post_timestamp + post_lat + post_lon + post_commonName + post_scientificName + post_algorithm + post_confidence + post_end
                                 print(post_json)
                                 response = requests.post(detection_url, json=json.loads(post_json))
                                 print("Detection POST Response Status - ", response.status_code)
