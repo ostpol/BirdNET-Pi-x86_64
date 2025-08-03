@@ -8,7 +8,7 @@ I run BirdNET-Pi within a KVM virtual machine hosted on a Dell T20 with [OMV](ht
 > Certain actions, such as updating or uninstallation, have not been tested. Proceed at your own risk, or, even better, contribute your experiences with these actions.
 
 ## Requirements
-* A device running Debian in x86_64.
+* A device running Debian 11 in x86_64.
 * Some kind of audio input (RTSP stream, microphone)
 
 ## Changes
